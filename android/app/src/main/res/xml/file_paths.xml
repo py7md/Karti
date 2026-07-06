@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sharing files directly from the external root 'krotak' directory -->
+    <external-path name="krotak_external" path="Documents/krotak" />
+    <external-path name="krotak_root" path="krotak" />
+    
+    <!-- Sharing files from app-specific external directories (Scoped Storage fallback) -->
+    <external-files-path name="krotak_files" path="krotak" />
+    
+    <!-- General legacy image caches -->
+    <external-path name="my_images" path="." />
+    <cache-path name="my_cache_images" path="." />
+</paths>

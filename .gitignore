@@ -1,0 +1,35 @@
+# Web/Node dependencies and builds
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Android built files
+*.apk
+*.aar
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Gradle files and directories
+.gradle/
+local.properties
+.navigation/
+captures/
+*.iml
+.idea/
+
+# Android profiling & caches
+*.hprof
+.externalNativeBuild/
+.cxx/
+capacitor-cordova-android-plugins/
+app/src/main/assets/public/
+app/src/main/assets/capacitor.config.json
+app/src/main/assets/capacitor.plugins.json
+app/src/main/res/xml/config.xml

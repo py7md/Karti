@@ -1,0 +1,84 @@
+{
+  "entities": {
+    "ActivatedSerial": {
+      "title": "ActivatedSerial",
+      "description": "Binds a serial key to a specific wireless network name on its first activation.",
+      "type": "object",
+      "properties": {
+        "serial": {
+          "type": "string",
+          "description": "The unique, pre-guaranteed serial number (e.g. DAH-7MD-001)"
+        },
+        "networkName": {
+          "type": "string",
+          "description": "The custom wireless network name bound to this serial"
+        },
+        "activatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the serial was first locked and activated"
+        }
+      },
+      "required": ["serial", "networkName", "activatedAt"]
+    },
+    "Backup": {
+      "title": "Backup",
+      "description": "Complete financial and configuration state backed up automatically.",
+      "type": "object",
+      "properties": {
+        "serial": {
+          "type": "string",
+          "description": "Associated serial number"
+        },
+        "networkName": {
+          "type": "string",
+          "description": "Associated network name"
+        },
+        "salesHistory": {
+          "type": "array",
+          "description": "List of all sales transaction records"
+        },
+        "shops": {
+          "type": "array",
+          "description": "List of all shop accounts and their sub-transactions"
+        },
+        "prices": {
+          "type": "object",
+          "description": "Configured card prices per category"
+        },
+        "isSoundEnabled": {
+          "type": "boolean",
+          "description": "Sound notification preferences"
+        },
+        "distributorName": {
+          "type": "string",
+          "description": "Nominal name of the network distributor"
+        },
+        "distributorPhone": {
+          "type": "string",
+          "description": "Nominal phone number of the network distributor"
+        },
+        "pdfFooterNote": {
+          "type": "string",
+          "description": "Optional footer text note shown on PDFs"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last backup operation"
+        }
+      },
+      "required": ["serial", "networkName", "salesHistory", "shops", "prices", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/activated_serials/{serial}": {
+      "schema": "ActivatedSerial",
+      "description": "Tethers valid license serial keys to client network names."
+    },
+    "/backups/{serial}": {
+      "schema": "Backup",
+      "description": "Storage for client ledgers and network backups."
+    }
+  }
+}
